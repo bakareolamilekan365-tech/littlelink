@@ -1,88 +1,87 @@
-# Littlelink - Social Links Hub
+# Littlelink
 
-A modern, responsive link aggregator page featuring all of Olamilekan Bakare's social media and professional profiles in one beautiful, easy-to-share page.
+A responsive personal links page for Olamilekan Bakare, built with React, Vite, and Tailwind CSS.
 
-## 🔗 Included Links
+## Live Site
 
-- **X (Twitter)**: [@bolamilekan2068](https://x.com/bolamilekan2068)
-- **GitHub**: [@bakareolamilekan365-tech](https://github.com/bakareolamilekan365-tech/)
-- **LinkedIn**: [Olamilekan Bakare](https://www.linkedin.com/in/olamilekan-bakare)
-- **Instagram**: [@black.is.beautiful.original](https://www.instagram.com/black.is.beautiful.original)
-- **Snapchat**: [@dahblackboy001](https://www.snapchat.com/add/dahblackboy001)
+- GitHub Pages: https://bakareolamilekan365-tech.github.io/littlelink/
 
-## ✨ Features
+## Features
 
-- **Modern Design**: Glassmorphism effect with smooth animations
-- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
-- **Fast**: Pure HTML, CSS, and vanilla JavaScript - no heavy frameworks
-- **Accessible**: Semantic HTML and proper ARIA labels
-- **Performance Optimized**: Minimal dependencies and optimized assets
+- Multiple design presets with a preset selector
+- Light and dark mode toggle with local persistence
+- Brand-colored social cards
+- Custom icon treatments for X, Instagram, Facebook, Gmail, and Snapchat
+- Portfolio button with a professional under-construction notice
+- Responsive 3-column card layout
 
-## 🚀 Quick Start
+## Tech Stack
 
-### Option 1: Direct File Open
+- React 19
+- Vite 8
+- Tailwind CSS 3
+- PostCSS + Autoprefixer
+- Font Awesome (CDN)
 
-Simply open `index.html` in your web browser.
+## Project Structure
 
-### Option 2: Local Server
+```text
+littlelink/
+  .github/workflows/deploy-pages.yml
+  index.html
+  package.json
+  postcss.config.js
+  tailwind.config.js
+  vite.config.js
+  src/
+    App.jsx
+    main.jsx
+    index.css
+```
+
+## Local Development
+
+1. Install dependencies:
 
 ```bash
-# Using Python 3
-python -m http.server 8000
+npm install
+```
 
-# Or using Node.js/npm
-npm start
+2. Start development server:
 
-# Or using live-server for development
+```bash
 npm run dev
 ```
 
-Then visit `http://localhost:8000` (or `http://localhost:3000` for dev)
+3. Build for production:
 
-## 📁 Project Structure
-
-```
-littlelink/
-├── index.html       # Main HTML file with all links
-├── styles.css       # Styling and animations
-├── package.json     # Project metadata
-└── README.md        # This file
+```bash
+npm run build
 ```
 
-## 🎨 Customization
+4. Preview production build locally:
 
-To customize the page:
+```bash
+npm run preview
+```
 
-1. **Change the name/bio**: Edit the `<h1>` and `.bio` text in `index.html`
-2. **Update links**: Modify the URLs in the `<a>` tags
-3. **Change colors**: Edit CSS variables in `styles.css` under `:root`
-4. **Modify avatar**: Replace the Font Awesome icon with your own image
+## Deployment
 
-## 📱 Browser Support
+Deployment is configured with GitHub Actions and GitHub Pages.
 
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Workflow file: .github/workflows/deploy-pages.yml
+- Trigger: push to main
+- Build output: dist
 
-## 🔧 Technologies Used
+## Updating Profile Content
 
-- HTML5
-- CSS3 (with Flexbox, Backdrop Filter, Gradients)
-- Font Awesome Icons
-- Vanilla JavaScript (minimal)
+Edit the following in src/App.jsx:
 
-## 📄 License
+- Display name and bio
+- Social links
+- Brand colors per card
+- Icons and icon rendering behavior
 
-MIT License - Feel free to use and modify as needed.
+## License
 
-## 🤝 Author
-
-**Olamilekan Bakare**
-
-- Website: littlelink
-- All social links available on the main page
-
----
-
-Made with ❤️ for easy link sharing
+MIT
