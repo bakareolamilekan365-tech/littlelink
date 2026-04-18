@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1a1a2e;
+  --secondary-color: #16213e;
+  --accent-color: #0f3460;
+  --highlight-color: #e94560;
+  --text-light: #eeeeee;
+  --text-dark: #333333;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="light"] {
+  --primary-color: #f5f5f5;
+  --secondary-color: #ffffff;
+  --accent-color: #e8e8e8;
+  --highlight-color: #e94560;
+  --text-light: #333333;
+  --text-dark: #666666;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1) rotate(20deg);
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #333333;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+html[data-theme="light"] .container {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.avatar {
+  font-size: 80px;
+  margin-bottom: 20px;
+  color: var(--highlight-color);
+}
+
+.profile h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+html[data-theme="light"] .profile h1 {
+  color: #333333;
+}
+
+.profile .bio {
+  font-size: 14px;
+  color: rgba(238, 238, 238, 0.7);
+}
+
+html[data-theme="light"] .profile .bio {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.link-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 120px;
+  padding: 18px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  background: rgba(15, 52, 96, 0.3);
+  color: var(--text-light);
+  animation: fadeIn 0.8s ease-out both;
+  text-align: center;
+}
+
+.link-button i {
+  font-size: 26px;
+}
+
+.link-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--highlight-color);
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+  background: rgba(233, 69, 96, 0.2);
+}
+
+html[data-theme="light"] .link-button {
+  background: rgba(232, 232, 232, 0.8);
+  color: #333333;
+}
+
+html[data-theme="light"] .link-button:hover {
+  background: rgba(233, 69, 96, 0.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .profile h1 {
+    font-size: 24px;
+  }
+
+  .avatar {
+    font-size: 60px;
+  }
+
+  .links {
+    gap: 12px;
+  }
+
+  .link-button {
+    min-height: 100px;
+    font-size: 10px;
+    padding: 14px 8px;
+  }
+
+  .link-button i {
+    font-size: 22px;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
