@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bakare Olamilekan Abdulkarim | Portfolio</title>
+    <meta
+      name="description"
+      content="Bakare Olamilekan Abdulkarim's portfolio showcasing software engineering, full-stack development projects, public speaking, and tech innovation work."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Cabin:wght@600;700&family=Chakra+Petch:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=DM+Serif+Display&family=Fira+Sans:wght@400;600&family=Inter:wght@400;600;700&family=Karla:wght@400;600;700&family=Lexend:wght@500;700&family=Manrope:wght@400;600;700&family=Merriweather:wght@700&family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@700&family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Unbounded:wght@600&family=Urbanist:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="page2.css" />
+  </head>
+  <body data-preset="mono-editorial" data-mode="dark">
+    <div class="page-shell">
+      <div class="top-controls">
+        <div
+          class="preset-panel"
+          role="group"
+          aria-label="Design preset controls"
+        >
+          <label for="preset-select">Design Preset</label>
+          <button
+            id="preset-prev"
+            type="button"
+            aria-label="Previous design preset"
+          >
+            Previous
+          </button>
+          <select
+            id="preset-select"
+            aria-label="Choose portfolio design preset"
+          ></select>
+          <button
+            id="preset-next"
+            type="button"
+            aria-label="Next design preset"
+          >
+            Next
+          </button>
+        </div>
+        <button
+          id="mode-toggle"
+          type="button"
+          aria-label="Toggle light and dark mode"
+        >
+          <svg
+            id="icon-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="mode-icon"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            id="icon-sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="mode-icon"
+            style="display: none"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary section navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#speaking">Topics</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <header>
+        <section class="hero">
+          <figure>
+            <img
+              src="profile-photo.png"
+              alt="Portrait of Olamilekan Bakare"
+              width="250"
+              height="250"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div class="hero-content">
+            <h1>Olamilekan Bakare</h1>
+            <p class="hero-roles">
+              Software Engineer &middot; Full-Stack Developer
+              <span class="status-badge"
+                ><span class="pulse-dot" aria-hidden="true"></span>Undergoing
+                Full-Stack Training</span
+              >
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="hero-metrics" aria-label="Professional highlights">
+              <span>4 Featured Projects</span>
+              <span>Independent Product Delivery</span>
+              <span>Full-Stack Training Track</span>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section id="about">
+          <h2>About</h2>
+          <p class="section-lead">
+            Learning in public while building practical projects that solve real
+            problems.
+          </p>
+          <p>
+            I am a learning-focused Software Engineer building full-stack
+            projects to deepen my practical skills step by step. My current
+            focus is turning core concepts into working systems, improving code
+            quality, and understanding how reliable software is designed,
+            tested, and deployed. I may still be growing, but every project is
+            intentional and aimed at measurable progress.
+          </p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills & Expertise</h2>
+          <p class="section-lead">
+            Core technologies I use in delivery, plus areas where I am actively
+            training.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Backend & Data</h3>
+              <ul>
+                <li>Python <span class="skill-level">Intermediate</span></li>
+                <li>SQL <span class="skill-level">Learning</span></li>
+                <li>
+                  Django / Flask <span class="skill-level">Learning</span>
+                </li>
+                <li>Node.js <span class="skill-level">Learning</span></li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <ul>
+                <li>
+                  HTML / CSS <span class="skill-level">Intermediate</span>
+                </li>
+                <li>JavaScript <span class="skill-level">Beginner</span></li>
+                <li>TypeScript <span class="skill-level">Learning</span></li>
+                <li>React <span class="skill-level">Learning</span></li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Tools & Concepts</h3>
+              <ul>
+                <li>Git / GitHub <span class="skill-level">Beginner</span></li>
+                <li>VS Code <span class="skill-level">Daily Use</span></li>
+                <li>Render <span class="skill-level">Deployment</span></li>
+                <li>PostgreSQL <span class="skill-level">In Progress</span></li>
+                <li>SQLite <span class="skill-level">In Progress</span></li>
+                <li>
+                  Client Security Engineering
+                  <span class="skill-level">Applied in Delivery</span>
+                </li>
+                <li>
+                  Machine Learning Integration
+                  <span class="skill-level">Research</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <details class="learning-accordion" open>
+            <summary>
+              <span>Learning Essentials (Beginner Friendly)</span>
+              <span class="accordion-meta">Tap to collapse/expand</span>
+            </summary>
+            <div class="learning-essentials">
+              <p class="section-lead learning-lead">
+                A practical mini-guide for terms I am actively learning and
+                using.
+              </p>
+
+              <div class="term-spotlight" aria-live="polite">
+                <h4 id="term-title">Database</h4>
+                <p id="term-simple">
+                  Stores app data so it can be reused later.
+                </p>
+                <p id="term-example" class="term-mini">
+                  Example: users, attendance, and reports in SQLite or
+                  PostgreSQL.
+                </p>
+                <p class="term-rotation-note">Auto-rotates every 6 seconds.</p>
+              </div>
+
+              <div class="snippet-grid">
+                <article class="snippet-card">
+                  <h4>Python Input Validation</h4>
+                  <img
+                    src="assets/snippet-validate.svg"
+                    alt="Styled code image showing a Python validate_message function"
+                    class="snippet-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </article>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <section id="projects">
+          <h2>Featured Projects</h2>
+          <p class="section-lead">
+            Selected builds with clear problem framing, execution approach, and
+            current status.
+          </p>
+
+          <article>
+            <h3>SmartAttendance</h3>
+            <div class="project-chips">
+              <span class="project-chip">Product Build</span>
+              <span class="project-chip">In Iteration</span>
+            </div>
+            <div class="project-details">
+              <strong>Problem:</strong>
+              <p>
+                Manual record-keeping for attendance is slow, inefficient, and
+                highly prone to human error.
+              </p>
+
+              <strong>Approach:</strong>
+              <p>
+                Built a digital workflow designed to replace paper-based
+                tracking, ensuring accurate and secure data management.
+              </p>
+
+              <strong>Outcome:</strong>
+              <p>
+                A faster, more reliable digital tracking system for
+                administrative efficiency.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">Update Ongoing</span>
+              <a
+                href="https://github.com/bakareolamilekan365-tech/SmartAttendance"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View Repository &rarr;</a
+              >
+            </div>
+          </article>
+
+          <article>
+            <h3>SecOps Phishing Scanner</h3>
+            <div class="project-chips">
+              <span class="project-chip">Security Tooling</span>
+              <span class="project-chip">Live Demo</span>
+            </div>
+            <div class="project-details">
+              <strong>Problem:</strong>
+              <p>
+                Identifying malicious and deceptive URLs manually is difficult
+                and exposes users to significant security risks.
+              </p>
+
+              <strong>Approach:</strong>
+              <p>
+                Developed a Python-based web app combining URL feature
+                extraction with machine learning algorithms to classify
+                suspicious links.
+              </p>
+
+              <strong>Outcome:</strong>
+              <p>
+                Delivered an automated URL analysis workflow that improves
+                detection speed and reduces manual review effort.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">Live Project</span>
+              <a
+                href="https://secops-phishing-scanner.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View Live Demo &rarr;</a
+              >
+            </div>
+          </article>
+
+          <article>
+            <h3>Business</h3>
+            <div class="project-chips">
+              <span class="project-chip">Console Game</span>
+              <span class="project-chip">Python</span>
+              <span class="project-chip">Repository</span>
+            </div>
+            <div class="project-details">
+              <strong>Problem:</strong>
+              <p>
+                Building a simple interactive project to strengthen practical
+                Python logic, control flow, and user input handling.
+              </p>
+
+              <strong>Approach:</strong>
+              <p>
+                Implemented a command-line game structure in Python with clear
+                game flow and reusable logic for easier iteration.
+              </p>
+
+              <strong>Outcome:</strong>
+              <p>
+                Delivered a working Python console game that demonstrates
+                hands-on software building and foundational engineering
+                practice.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">Completed</span>
+              <a
+                href="https://github.com/bakareolamilekan365-tech/Business"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View Repository &rarr;</a
+              >
+            </div>
+          </article>
+
+          <article>
+            <h3>Fog vs Cloud Telemedicine</h3>
+            <div class="project-chips">
+              <span class="project-chip">Research</span>
+              <span class="project-chip">Architecture Study</span>
+            </div>
+            <div class="project-details">
+              <strong>Problem:</strong>
+              <p>
+                Cloud-only telemedicine architectures can suffer from high
+                latency, which negatively impacts real-time healthcare delivery.
+              </p>
+
+              <strong>Approach:</strong>
+              <p>
+                Engineering and researching an architectural comparison between
+                fog and cloud computing focusing on responsiveness and
+                reliability.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">In Progress</span>
+              <a
+                href="https://github.com/bakareolamilekan365-tech/fog-vs-cloud-telemedicine"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >View Research &rarr;</a
+              >
+            </div>
+          </article>
+
+          <article>
+            <h3>Bioengineered Human Interface</h3>
+            <div class="project-chips">
+              <span class="project-chip">R&amp;D</span>
+              <span class="project-chip">Long-term</span>
+            </div>
+            <div class="project-details">
+              <strong>Problem:</strong>
+              <p>
+                Accurately interpreting complex human biological signals remains
+                a massive challenge for digital health diagnostics.
+              </p>
+
+              <strong>Approach:</strong>
+              <p>
+                Planning the use of machine learning models to read and
+                interpret blood circulation, heartbeat waves, and brain signals.
+              </p>
+
+              <strong>Expected Next Milestone:</strong>
+              <p>
+                Complete a baseline signal-ingestion pipeline and validate early
+                model assumptions on a controlled dataset.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">Planning Phase</span>
+              <span class="project-timeline">Long-term Project</span>
+            </div>
+          </article>
+        </section>
+
+        <section id="speaking">
+          <h2>Topics I Cover</h2>
+          <p class="section-lead">
+            Topics I share in community sessions and practical technical
+            discussions.
+          </p>
+          <p>
+            Beyond coding, I actively share insights with the tech community. I
+            am passionate about simplifying complex concepts and facilitating
+            discussions on:
+          </p>
+          <ul class="topics-list">
+            <li>
+              <strong>Software Engineering Fundamentals:</strong> Best
+              practices, clean code, and building scalable systems.
+            </li>
+            <li>
+              <strong>Solution-Driven Engineering:</strong> Turning practical
+              problem statements into reliable, maintainable software systems.
+            </li>
+            <li>
+              <strong>Full-Stack Growth:</strong> Practical roadmaps and
+              real-world problem-solving for beginners.
+            </li>
+            <li>
+              <strong>Engineering Mindset:</strong> Navigating continuous
+              learning and driving innovation in tech.
+            </li>
+          </ul>
+        </section>
+
+        <section id="certificates">
+          <h2>Coursera Certificates</h2>
+          <p class="section-lead">Verified training records from Coursera.</p>
+          <div class="certificates-grid">
+            <article class="certificate-card">
+              <h3>Introduction to Front-End Development</h3>
+              <p>Issued by Meta on March 14, 2026.</p>
+              <a
+                href="https://www.coursera.org/account/accomplishments/verify/GV6FX999989T"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificate-link"
+                >Verify Certificate &rarr;</a
+              >
+            </article>
+            <article class="certificate-card">
+              <h3>Introduction to Software Engineering</h3>
+              <p>Issued by IBM on March 10, 2026.</p>
+              <a
+                href="https://www.coursera.org/account/accomplishments/verify/9XBCLOJS9CO1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="certificate-link"
+                >Verify Certificate &rarr;</a
+              >
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+          <h2>Let's Build Something Together</h2>
+          <p class="section-lead">
+            Open to project collaborations, technical partnerships, and speaking
+            opportunities.
+          </p>
+          <p>
+            Tell me what you are building, who it is for, and what outcome you
+            want. I will reply with a practical next step.
+          </p>
+
+          <div class="contact-grid contact-experience">
+            <div class="contact-card contact-form-card">
+              <h3>Message Planner</h3>
+              <p class="contact-card-text">
+                Draft your message here first. This helps you send clear,
+                context-rich requests.
+              </p>
+
+              <form
+                class="contact-form"
+                onsubmit="return false;"
+                aria-label="Message planner form"
+              >
+                <label for="contact-name">Your Name</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  placeholder="Example: Amina Yusuf"
+                  autocomplete="name"
+                />
+
+                <label for="contact-email">Your Email</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  placeholder="Example: amina@communityhealth.ng"
+                  autocomplete="email"
+                />
+
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  rows="6"
+                  placeholder="Hi"
+                ></textarea>
+              </form>
+
+              <div class="contact-actions">
+                <a
+                  id="mail-app-link"
+                  href="mailto:bakareolamilekan365@gmail.com"
+                  class="btn btn-primary"
+                  >Send Message</a
+                >
+                <button id="copy-email" type="button" class="btn btn-secondary">
+                  Copy Email
+                </button>
+              </div>
+
+              <div class="tips-grid" aria-label="Message writing tips">
+                <article class="tip-card">
+                  <h4>Tip For Non-Tech</h4>
+                  <p>
+                    Mention your business goal first, then your deadline, then
+                    your budget range. This gives quick direction.
+                  </p>
+                </article>
+                <article class="tip-card">
+                  <h4>Tip For Tech Teams</h4>
+                  <p>
+                    Include current stack, blockers, expected deliverables, and
+                    repo or architecture links for faster alignment.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <div class="contact-card contact-preview-card">
+              <h3>Message Preview</h3>
+              <p class="contact-card-text">
+                What your outreach currently sounds like.
+              </p>
+
+              <div
+                id="message-preview"
+                class="message-preview"
+                aria-live="polite"
+              ></div>
+
+              <div class="social-orbit" aria-label="Social profiles">
+                <a
+                  href="https://github.com/bakareolamilekan365-tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-orb"
+                  aria-label="GitHub"
+                >
+                  <img
+                    src="https://www.google.com/s2/favicons?domain=github.com&sz=64"
+                    alt=""
+                    class="social-favicon"
+                    loading="lazy"
+                    decoding="async"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/olamilekan-bakare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-orb"
+                  aria-label="LinkedIn"
+                >
+                  <img
+                    src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64"
+                    alt=""
+                    class="social-favicon"
+                    loading="lazy"
+                    decoding="async"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="mailto:bakareolamilekan365@gmail.com"
+                  class="social-orb"
+                  aria-label="Email"
+                >
+                  <img
+                    src="https://www.google.com/s2/favicons?domain=mail.google.com&sz=64"
+                    alt=""
+                    class="social-favicon"
+                    loading="lazy"
+                    decoding="async"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://x.com/bolamilekan2068"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-orb"
+                  aria-label="X"
+                >
+                  <img
+                    src="https://www.google.com/s2/favicons?domain=x.com&sz=64"
+                    alt=""
+                    class="social-favicon"
+                    loading="lazy"
+                    decoding="async"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+
+              <p class="social-orbit-caption">GitHub · LinkedIn · Email · X</p>
+              <div class="contact-actions social-actions">
+                <a
+                  href="https://bakareolamilekan365-tech.github.io/littlelink/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-secondary"
+                  >Open Full Links Hub</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>© <span id="year"></span> Olamilekan Bakare. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      const presets = [
+        { key: "mono-editorial", label: "Mono Editorial" },
+        { key: "ember-grid", label: "Ember Grid" },
+        { key: "signal-storyline", label: "Signal Storyline" },
+      ];
+
+      const presetSelect = document.getElementById("preset-select");
+      const presetPrev = document.getElementById("preset-prev");
+      const presetNext = document.getElementById("preset-next");
+      const modeToggle = document.getElementById("mode-toggle");
+      const moon = document.getElementById("icon-moon");
+      const sun = document.getElementById("icon-sun");
+      const presetStorageKey = "portfolioPreset";
+      const modeStorageKey = "portfolioMode";
+
+      function setPresetByIndex(index) {
+        const safeIndex = (index + presets.length) % presets.length;
+        const selected = presets[safeIndex];
+        document.body.setAttribute("data-preset", selected.key);
+        presetSelect.value = selected.key;
+        localStorage.setItem(presetStorageKey, selected.key);
+      }
+
+      function setMode(mode) {
+        document.body.setAttribute("data-mode", mode);
+        localStorage.setItem(modeStorageKey, mode);
+
+        if (mode === "dark") {
+          moon.style.display = "block";
+          sun.style.display = "none";
+          moon.classList.add("icon-rotate");
+          setTimeout(() => moon.classList.remove("icon-rotate"), 600);
+        } else {
+          sun.style.display = "block";
+          moon.style.display = "none";
+          sun.classList.add("icon-rotate");
+          setTimeout(() => sun.classList.remove("icon-rotate"), 600);
+        }
+      }
+
+      presets.forEach((preset) => {
+        const option = document.createElement("option");
+        option.value = preset.key;
+        option.textContent = preset.label;
+        presetSelect.append(option);
+      });
+
+      const savedPreset = localStorage.getItem(presetStorageKey);
+      const startIndex = Math.max(
+        0,
+        presets.findIndex((preset) => preset.key === savedPreset),
+      );
+      setPresetByIndex(startIndex);
+
+      const savedMode = localStorage.getItem(modeStorageKey) || "dark";
+      setMode(savedMode);
+
+      presetSelect.addEventListener("change", (event) => {
+        const idx = presets.findIndex(
+          (preset) => preset.key === event.target.value,
+        );
+        setPresetByIndex(idx);
+      });
+
+      presetPrev.addEventListener("click", () => {
+        const currentIndex = presets.findIndex(
+          (preset) => preset.key === document.body.getAttribute("data-preset"),
+        );
+        setPresetByIndex(currentIndex - 1);
+      });
+
+      presetNext.addEventListener("click", () => {
+        const currentIndex = presets.findIndex(
+          (preset) => preset.key === document.body.getAttribute("data-preset"),
+        );
+        setPresetByIndex(currentIndex + 1);
+      });
+
+      modeToggle.addEventListener("click", () => {
+        const currentMode = document.body.getAttribute("data-mode") || "dark";
+        setMode(currentMode === "dark" ? "light" : "dark");
+      });
+
+      const contactName = document.getElementById("contact-name");
+      const contactEmail = document.getElementById("contact-email");
+      const contactMessage = document.getElementById("contact-message");
+      const messagePreview = document.getElementById("message-preview");
+      const mailAppLink = document.getElementById("mail-app-link");
+      const copyEmailBtn = document.getElementById("copy-email");
+      const destinationEmail = "bakareolamilekan365@gmail.com";
+
+      function buildPreviewText() {
+        const name = contactName?.value.trim() || "";
+        const email = contactEmail?.value.trim() || "";
+        const message = contactMessage?.value.trim() || "";
+        const lines = [];
+
+        if (name || email) {
+          const identity = `From: ${name || "Unknown"}${email ? ` <${email}>` : ""}`;
+          lines.push(identity);
+        }
+
+        if (message) {
+          if (lines.length) {
+            lines.push("");
+          }
+          lines.push(message);
+        }
+
+        return lines.join("\n");
+      }
+
+      function updateContactPreview() {
+        const previewText = buildPreviewText();
+
+        if (messagePreview) {
+          messagePreview.textContent = previewText;
+          messagePreview.classList.toggle("is-empty", previewText.length === 0);
+        }
+
+        if (mailAppLink) {
+          const subject = encodeURIComponent(
+            "Project Inquiry from Portfolio Contact",
+          );
+          const body = encodeURIComponent(previewText || "Hi");
+          mailAppLink.href = `mailto:${destinationEmail}?subject=${subject}&body=${body}`;
+        }
+      }
+
+      [contactName, contactEmail, contactMessage].forEach((field) => {
+        field?.addEventListener("input", updateContactPreview);
+      });
+
+      copyEmailBtn?.addEventListener("click", async () => {
+        const original = copyEmailBtn.textContent;
+        try {
+          await navigator.clipboard.writeText(destinationEmail);
+          copyEmailBtn.textContent = "Email Copied";
+        } catch {
+          copyEmailBtn.textContent = "Copy Failed";
+        }
+        setTimeout(() => {
+          copyEmailBtn.textContent = original;
+        }, 1200);
+      });
+
+      const learningTerms = [
+        {
+          title: "Database",
+          simple: "Stores app data so it can be reused later.",
+          example:
+            "Example: users, attendance, and reports in SQLite or PostgreSQL.",
+        },
+        {
+          title: "Authentication",
+          simple: "Verifies who a user is before access is granted.",
+          example:
+            "Example: secure login before opening a protected dashboard.",
+        },
+        {
+          title: "Authorization",
+          simple: "Controls what a logged-in user is allowed to do.",
+          example: "Example: only admins can access management actions.",
+        },
+        {
+          title: "API",
+          simple:
+            "Connects frontend and backend through request/response rules.",
+          example: "Example: send a URL and return a scan verdict.",
+        },
+        {
+          title: "Caching",
+          simple: "Temporarily stores frequent results to improve speed.",
+          example: "Example: reuse scan results for repeated URLs.",
+        },
+        {
+          title: "Deployment",
+          simple: "Makes a local app accessible online for real users.",
+          example: "Example: hosting your project on Render.",
+        },
+      ];
+
+      const termTitle = document.getElementById("term-title");
+      const termSimple = document.getElementById("term-simple");
+      const termExample = document.getElementById("term-example");
+      let currentTermIndex = -1;
+
+      function rotateLearningTerm() {
+        if (
+          !termTitle ||
+          !termSimple ||
+          !termExample ||
+          !learningTerms.length
+        ) {
+          return;
+        }
+
+        let nextIndex = currentTermIndex;
+        while (nextIndex === currentTermIndex) {
+          nextIndex = Math.floor(Math.random() * learningTerms.length);
+        }
+
+        currentTermIndex = nextIndex;
+        const item = learningTerms[nextIndex];
+        termTitle.textContent = item.title;
+        termSimple.textContent = item.simple;
+        termExample.textContent = item.example;
+      }
+
+      rotateLearningTerm();
+      setInterval(rotateLearningTerm, 6000);
+
+      updateContactPreview();
+
+      const revealTargets = document.querySelectorAll(
+        "main section, #projects article, .skill-category",
+      );
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reduceMotion && "IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal-active");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16, rootMargin: "0px 0px -40px 0px" },
+        );
+
+        revealTargets.forEach((element) => {
+          element.classList.add("reveal");
+          revealObserver.observe(element);
+        });
+      } else {
+        revealTargets.forEach((element) => {
+          element.classList.add("reveal-active");
+        });
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
