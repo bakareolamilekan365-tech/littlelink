@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="t d">
+  <title id="t">Python API route snippet</title>
+  <desc id="d">Styled code card image for a simple scan endpoint.</desc>
+  <rect width="1200" height="520" fill="#95A2AF"/>
+  <rect x="72" y="48" width="960" height="404" rx="12" fill="#232A36"/>
+  <circle cx="102" cy="80" r="10" fill="#FF5F56"/>
+  <circle cx="132" cy="80" r="10" fill="#FFBD2E"/>
+  <circle cx="162" cy="80" r="10" fill="#27C93F"/>
+  <text x="104" y="150" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">@app.</text>
+  <text x="244" y="150" fill="#56B6C2" font-family="Consolas, Monaco, monospace" font-size="52">post</text>
+  <text x="347" y="150" fill="#98C379" font-family="Consolas, Monaco, monospace" font-size="52">("/scan")</text>
+  <text x="104" y="208" fill="#C792EA" font-family="Consolas, Monaco, monospace" font-size="52">def</text>
+  <text x="200" y="208" fill="#E5C07B" font-family="Consolas, Monaco, monospace" font-size="52"> scan_url</text>
+  <text x="415" y="208" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">(</text>
+  <text x="440" y="208" fill="#E06C75" font-family="Consolas, Monaco, monospace" font-size="52">payload</text>
+  <text x="620" y="208" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">: dict):</text>
+  <text x="104" y="267" fill="#E06C75" font-family="Consolas, Monaco, monospace" font-size="52">    url</text>
+  <text x="240" y="267" fill="#56B6C2" font-family="Consolas, Monaco, monospace" font-size="52"> = payload.get</text>
+  <text x="542" y="267" fill="#98C379" font-family="Consolas, Monaco, monospace" font-size="52">("url", "")</text>
+  <text x="104" y="326" fill="#E06C75" font-family="Consolas, Monaco, monospace" font-size="52">    verdict</text>
+  <text x="322" y="326" fill="#56B6C2" font-family="Consolas, Monaco, monospace" font-size="52"> = classify_url(url)</text>
+  <text x="104" y="385" fill="#C792EA" font-family="Consolas, Monaco, monospace" font-size="52">    return</text>
+  <text x="285" y="385" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">{"url": </text>
+  <text x="430" y="385" fill="#E06C75" font-family="Consolas, Monaco, monospace" font-size="52">url</text>
+  <text x="507" y="385" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">, "verdict": </text>
+  <text x="740" y="385" fill="#E06C75" font-family="Consolas, Monaco, monospace" font-size="52">verdict</text>
+  <text x="936" y="385" fill="#ABB2BF" font-family="Consolas, Monaco, monospace" font-size="52">}</text>
+</svg>

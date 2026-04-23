@@ -375,7 +375,6 @@ export default function App() {
   const [styleKey, setStyleKey] = useState(
     () => localStorage.getItem("styleKey") || defaultStyle,
   );
-  const [showPortfolioNotice, setShowPortfolioNotice] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", mode === "dark");
@@ -448,6 +447,15 @@ export default function App() {
               Software Engineer | Fullstack Developer | Public Speaker | Tech
               Enthusiast
             </p>
+            <div className="mt-4 flex justify-center">
+              <a
+                href="/Page2.html"
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 transition hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-md dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-300"
+              >
+                <i className="fas fa-briefcase" />
+                <span>Portfolio</span>
+              </a>
+            </div>
           </header>
 
           <section
@@ -499,39 +507,6 @@ export default function App() {
             ))}
           </section>
 
-          <section className="mt-6" aria-label="Portfolio section">
-            <div className="flex justify-center">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 transition hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-md dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-300"
-                onClick={() => setShowPortfolioNotice((prev) => !prev)}
-                aria-expanded={showPortfolioNotice}
-                aria-controls="portfolio-notice"
-              >
-                <i className="fas fa-briefcase" />
-                <span>Portfolio</span>
-              </button>
-            </div>
-
-            {showPortfolioNotice && (
-              <div
-                id="portfolio-notice"
-                className="mx-auto mt-4 max-w-xl rounded-xl border border-amber-300/80 bg-amber-50/95 p-4 text-amber-900 shadow-sm dark:border-amber-700/80 dark:bg-amber-950/40 dark:text-amber-100"
-                role="status"
-                aria-live="polite"
-              >
-                <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
-                  <i className="fas fa-triangle-exclamation" />
-                  <i className="fas fa-screwdriver-wrench" />
-                  <span>Portfolio In Progress</span>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  The portfolio section is currently under construction. Project
-                  case studies and detailed write-ups will be published soon.
-                </p>
-              </div>
-            )}
-          </section>
         </main>
       </div>
     </div>
