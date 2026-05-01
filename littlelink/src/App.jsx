@@ -366,7 +366,7 @@ const styles = {
   },
 };
 
-const defaultStyle = "editorial";
+const defaultStyle = "glasslite";
 
 export default function App() {
   const [mode, setMode] = useState(
@@ -395,34 +395,13 @@ export default function App() {
       className={`min-h-screen bg-gradient-to-br px-5 py-6 transition-colors ${current.shell}`}
     >
       <div className="mx-auto flex w-full max-w-[680px] flex-col gap-4">
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-black/10 bg-white/60 p-3 backdrop-blur dark:border-white/10 dark:bg-black/25">
-          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-200">
-            Design preset control
-          </div>
-          <div className="flex items-center gap-2">
-            <select
-              className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-800 outline-none ring-0 transition focus:border-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-              value={styleKey}
-              onChange={(e) => setStyleKey(e.target.value)}
-              aria-label="Choose design style"
-            >
-              {Object.entries(styles).map(([key, style]) => (
-                <option key={key} value={key}>
-                  {style.name}
-                </option>
-              ))}
-            </select>
-            <button
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-900 transition hover:scale-105 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-              aria-label="Toggle light dark mode"
-              onClick={() =>
-                setMode((prev) => (prev === "dark" ? "light" : "dark"))
-              }
-            >
-              <i className={mode === "light" ? "fas fa-sun" : "fas fa-moon"} />
-            </button>
-          </div>
-        </div>
+        <button
+          className="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-900 transition hover:scale-105 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+          aria-label="Toggle light dark mode"
+          onClick={() => setMode((prev) => (prev === "dark" ? "light" : "dark"))}
+        >
+          <i className={mode === "light" ? "fas fa-sun" : "fas fa-moon"} />
+        </button>
 
         <main
           className={`w-full rounded-3xl border p-6 sm:p-8 ${current.frame}`}
@@ -506,7 +485,6 @@ export default function App() {
               </a>
             ))}
           </section>
-
         </main>
       </div>
     </div>

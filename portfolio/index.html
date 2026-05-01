@@ -19,31 +19,6 @@
   <body data-preset="mono-editorial" data-mode="dark">
     <div class="page-shell">
       <div class="top-controls">
-        <div
-          class="preset-panel"
-          role="group"
-          aria-label="Design preset controls"
-        >
-          <label for="preset-select">Design Preset</label>
-          <button
-            id="preset-prev"
-            type="button"
-            aria-label="Previous design preset"
-          >
-            Previous
-          </button>
-          <select
-            id="preset-select"
-            aria-label="Choose portfolio design preset"
-          ></select>
-          <button
-            id="preset-next"
-            type="button"
-            aria-label="Next design preset"
-          >
-            Next
-          </button>
-        </div>
         <button
           id="mode-toggle"
           type="button"
@@ -104,6 +79,7 @@
             </p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="socials/" class="btn btn-secondary" aria-label="Visit socials">Visit My Socials</a>
               <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
             <div class="hero-metrics" aria-label="Professional highlights">
@@ -388,14 +364,14 @@
 
               <strong>Phase 1 Focus (Current):</strong>
               <p>
-                Building a multimodal biosignal ingestion pipeline for ECG,
-                PPG, EEG, and EDA to capture and synchronise physiological
-                states such as hunger, curiosity, and boredom.
+                Building a multimodal biosignal ingestion pipeline for ECG, PPG,
+                EEG, and EDA to capture and synchronise physiological states
+                such as hunger, curiosity, and boredom.
               </p>
               <p>
-                Validating the pipeline on public datasets such as PhysioNet
-                and DEAP, while developing simple Python visualisation tools to
-                plot two signals on a shared time axis.
+                Validating the pipeline on public datasets such as PhysioNet and
+                DEAP, while developing simple Python visualisation tools to plot
+                two signals on a shared time axis.
               </p>
 
               <strong>Core Technical Concepts:</strong>
@@ -676,28 +652,11 @@
     </div>
 
     <script>
-      const presets = [
-        { key: "mono-editorial", label: "Mono Editorial" },
-        { key: "ember-grid", label: "Ember Grid" },
-        { key: "signal-storyline", label: "Signal Storyline" },
-      ];
-
-      const presetSelect = document.getElementById("preset-select");
-      const presetPrev = document.getElementById("preset-prev");
-      const presetNext = document.getElementById("preset-next");
+      // Preset selection disabled — portfolio uses mono-editorial (locked in markup)
       const modeToggle = document.getElementById("mode-toggle");
       const moon = document.getElementById("icon-moon");
       const sun = document.getElementById("icon-sun");
-      const presetStorageKey = "portfolioPreset";
       const modeStorageKey = "portfolioMode";
-
-      function setPresetByIndex(index) {
-        const safeIndex = (index + presets.length) % presets.length;
-        const selected = presets[safeIndex];
-        document.body.setAttribute("data-preset", selected.key);
-        presetSelect.value = selected.key;
-        localStorage.setItem(presetStorageKey, selected.key);
-      }
 
       function setMode(mode) {
         document.body.setAttribute("data-mode", mode);
@@ -716,43 +675,8 @@
         }
       }
 
-      presets.forEach((preset) => {
-        const option = document.createElement("option");
-        option.value = preset.key;
-        option.textContent = preset.label;
-        presetSelect.append(option);
-      });
-
-      const savedPreset = localStorage.getItem(presetStorageKey);
-      const startIndex = Math.max(
-        0,
-        presets.findIndex((preset) => preset.key === savedPreset),
-      );
-      setPresetByIndex(startIndex);
-
       const savedMode = localStorage.getItem(modeStorageKey) || "dark";
       setMode(savedMode);
-
-      presetSelect.addEventListener("change", (event) => {
-        const idx = presets.findIndex(
-          (preset) => preset.key === event.target.value,
-        );
-        setPresetByIndex(idx);
-      });
-
-      presetPrev.addEventListener("click", () => {
-        const currentIndex = presets.findIndex(
-          (preset) => preset.key === document.body.getAttribute("data-preset"),
-        );
-        setPresetByIndex(currentIndex - 1);
-      });
-
-      presetNext.addEventListener("click", () => {
-        const currentIndex = presets.findIndex(
-          (preset) => preset.key === document.body.getAttribute("data-preset"),
-        );
-        setPresetByIndex(currentIndex + 1);
-      });
 
       modeToggle.addEventListener("click", () => {
         const currentMode = document.body.getAttribute("data-mode") || "dark";
