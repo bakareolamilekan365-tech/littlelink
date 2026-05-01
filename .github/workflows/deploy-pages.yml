@@ -21,13 +21,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: littlelink/package-lock.json
+
+      - name: Install littlelink dependencies
+        run: npm ci
+        working-directory: littlelink
+
+      - name: Build littlelink
+        run: npm run build
+        working-directory: littlelink
+
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf .pages
+          mkdir -p .pages/socials
+          cp -R portfolio/. .pages/
+          cp -R littlelink/dist/. .pages/socials/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: portfolio
+          path: .pages
 
       - name: Deploy to GitHub Pages
         id: deployment

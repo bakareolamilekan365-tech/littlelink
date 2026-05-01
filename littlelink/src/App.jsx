@@ -450,8 +450,6 @@ export default function App() {
             <div className="mt-4 flex justify-center">
               <a
                 href="https://bakareolamilekan365-tech.github.io/littlelink/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 transition hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-md dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-300"
               >
                 <i className="fas fa-briefcase" />
