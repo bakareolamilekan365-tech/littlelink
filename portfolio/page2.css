@@ -85,7 +85,23 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(
+      circle at top left,
+      color-mix(in oklab, var(--accent) 18%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      color-mix(in oklab, var(--surface-strong) 85%, transparent),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--bg) 96%, #000 4%),
+      var(--bg) 42%,
+      color-mix(in oklab, var(--bg) 90%, #000 10%)
+    );
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
@@ -94,6 +110,42 @@ body {
     background 0.4s ease,
     color 0.4s ease;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  inset: auto;
+  z-index: 0;
+  filter: blur(16px);
+  opacity: 0.85;
+}
+
+body::before {
+  top: -120px;
+  right: -120px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--accent) 30%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+body::after {
+  bottom: -160px;
+  left: -120px;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--surface-strong) 78%, transparent) 0%,
+    transparent 72%
+  );
 }
 
 * {
@@ -323,6 +375,8 @@ select {
   max-width: 900px;
   margin: 0 auto;
   padding: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
 }
 
 .top-controls {
@@ -398,10 +452,11 @@ header {
     var(--spacing-md);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  background: color-mix(in oklab, var(--surface) 85%, transparent);
+  background: color-mix(in oklab, var(--surface) 78%, transparent);
   backdrop-filter: blur(10px);
   margin-bottom: var(--spacing-2xl);
   flex-wrap: wrap;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
 }
 
 .site-nav a {
@@ -445,6 +500,7 @@ header {
   border: 2px solid var(--border);
   object-fit: cover;
   transition: all 0.4s ease;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
 }
 
 .hero img:hover {
@@ -719,12 +775,28 @@ main > section:last-child {
    ============================================================================ */
 
 #projects article {
-  background: var(--surface);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--surface-strong) 88%, transparent),
+      var(--surface)
+    );
   border: 1px solid var(--border);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-lg);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#projects article::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent 70%);
+  opacity: 0.75;
 }
 
 #projects article:hover {
@@ -779,12 +851,22 @@ main > section:last-child {
 
 .project-meta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-lg);
   flex-wrap: wrap;
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--border);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.project-cta {
+  min-width: 182px;
 }
 
 .project-status {
@@ -1191,6 +1273,14 @@ footer p {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-md);
+  }
+
+  .project-actions {
+    width: 100%;
+  }
+
+  .project-cta {
+    width: 100%;
   }
 
   .project-chips {
