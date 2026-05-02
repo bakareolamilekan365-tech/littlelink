@@ -72,10 +72,10 @@
           <div class="hero-content">
             <h1>Olamilekan Bakare</h1>
             <p class="hero-roles">
-              Software Engineer &middot; Full-Stack Developer
+              Full-Stack Developer (in training)
               <span class="status-badge"
-                ><span class="pulse-dot" aria-hidden="true"></span>Undergoing
-                Full-Stack Training</span
+                ><span class="pulse-dot" aria-hidden="true"></span>Learning in
+                public</span
               >
             </p>
             <div class="hero-actions">
@@ -97,6 +97,9 @@
       <main>
         <section id="about">
           <h2>About</h2>
+          <p class="about-opener">
+            I turn ideas into working projects while learning by building.
+          </p>
           <p class="section-lead">
             Learning in public while building practical projects that solve real
             problems.
@@ -180,7 +183,7 @@
                   Example: users, attendance, and reports in SQLite or
                   PostgreSQL.
                 </p>
-                <p class="term-rotation-note">Auto-rotates every 6 seconds.</p>
+                
               </div>
 
               <div class="snippet-grid">
@@ -818,8 +821,16 @@
         termExample.textContent = item.example;
       }
 
-      rotateLearningTerm();
-      setInterval(rotateLearningTerm, 6000);
+      // Show a single, static learning term (no auto-rotation)
+      if (learningTerms.length) {
+        currentTermIndex = 0;
+        const item0 = learningTerms[0];
+        if (termTitle && termSimple && termExample) {
+          termTitle.textContent = item0.title;
+          termSimple.textContent = item0.simple;
+          termExample.textContent = item0.example;
+        }
+      }
 
       updateContactPreview();
 
