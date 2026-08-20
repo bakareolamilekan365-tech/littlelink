@@ -183,7 +183,6 @@
                   Example: users, attendance, and reports in SQLite or
                   PostgreSQL.
                 </p>
-                
               </div>
 
               <div class="snippet-grid">
@@ -841,7 +840,17 @@
         "(prefers-reduced-motion: reduce)",
       ).matches;
 
-      if (!reduceMotion && "IntersectionObserver" in window) {
+      // On small screens, enable reveals immediately to avoid large
+      // invisible gaps caused by late IntersectionObserver triggers.
+      if (
+        window.innerWidth <= 768 ||
+        reduceMotion ||
+        !("IntersectionObserver" in window)
+      ) {
+        revealTargets.forEach((element) => {
+          element.classList.add("reveal-active");
+        });
+      } else {
         const revealObserver = new IntersectionObserver(
           (entries, observer) => {
             entries.forEach((entry) => {
@@ -851,16 +860,12 @@
               }
             });
           },
-          { threshold: 0.16, rootMargin: "0px 0px -40px 0px" },
+          { threshold: 0.06, rootMargin: "0px 0px -10% 0px" },
         );
 
         revealTargets.forEach((element) => {
           element.classList.add("reveal");
           revealObserver.observe(element);
-        });
-      } else {
-        revealTargets.forEach((element) => {
-          element.classList.add("reveal-active");
         });
       }
 
