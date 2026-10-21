@@ -42,8 +42,13 @@
           </figure>
           <div class="hero-content">
             <h1>Olamilekan Abdulkarim Bakare</h1>
-            <p class="hero-roles">Software Developer | Co-founder &amp; CTO, Atexgrove</p>
+            <p class="hero-roles">Full-Stack Developer | Co-founder &amp; CTO, Atexgrove</p>
             <p class="hero-promise">I build secure web tools and dashboards that automate everyday business work.</p>
+            <div class="hero-metrics" aria-label="Professional highlights">
+              <span>Co-founder &amp; CTO, Atexgrove</span>
+              <span>Freelance developer, 2026</span>
+              <span>B.Sc Computer Science, LAUTECH (2027)</span>
+            </div>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">View My Work</a>
               <a href="socials/" class="btn btn-secondary" aria-label="Connect">Connect</a>
@@ -57,6 +62,7 @@
         <section id="about">
           <h2>About</h2>
           <p>I am a B.Sc. Computer Science student at LAUTECH, with graduation expected in 2027. I am the co-founder and CTO of Atexgrove, an early-stage startup. I worked as a freelance software developer from March to July 2026. I use AI coding assistants, then review, test and document what I ship.</p>
+          <p>I build web apps, data tools and secure logins, and I check my work with tests.</p>
         </section>
 
         <section id="experience">
@@ -78,81 +84,125 @@
 
             <article class="experience-card">
               <div class="experience-heading">
-                <h3>Freelance Software Developer</h3>
+                <div>
+                  <h3>Freelance Software Developer</h3>
+                  <p class="experience-context">Self-employed</p>
+                </div>
                 <p class="experience-date">Mar to Jul 2026</p>
               </div>
-              <p>Built a phishing-link scanner and an investment-recommendation web app for private clients.</p>
+              <div class="freelance-projects">
+                <div class="freelance-project">
+                  <h4>Phishing-link scanner <span>(private client)</span></h4>
+                  <ul>
+                    <li>Flask web app that extracts features from a URL and classifies it with an ensemble of three models (Random Forest, XGBoost, Logistic Regression).</li>
+                    <li>Blocks requests aimed at internal or private addresses, and adds a Google Safe Browsing check as an extra signal.</li>
+                    <li>Deployed live on Render.</li>
+                  </ul>
+                </div>
+                <div class="freelance-project">
+                  <h4>Investment-recommendation web app, TradeSense NG <span>(private client)</span></h4>
+                  <ul>
+                    <li>FastAPI backend with secure logins (JWT, bcrypt) and an admin activity log.</li>
+                    <li>React dashboard with candlestick charts, and scikit-learn models working on historical data.</li>
+                    <li>Tested (pytest and vitest) and packaged with Docker for Render.</li>
+                    <li>Demo build with partly synthetic data.</li>
+                  </ul>
+                </div>
+              </div>
             </article>
           </div>
         </section>
 
         <section id="skills">
-          <h2>What I Can Help With</h2>
-          <div class="skills-grid">
-            <div class="skill-category"><h3>Building web apps</h3><p>Turn a workflow or idea into a usable web product.</p></div>
-            <div class="skill-category"><h3>Data and machine-learning tools</h3><p>Use data and models to support useful decisions.</p></div>
-            <div class="skill-category"><h3>Secure login and access control</h3><p>Protect accounts, pages and data by user role.</p></div>
-            <div class="skill-category"><h3>Dashboards and reporting</h3><p>Make important information easier to see and act on.</p></div>
-            <div class="skill-category"><h3>Testing and documentation</h3><p>Check the work and explain how it runs.</p></div>
+          <h2>Skills &amp; Tools</h2>
+          <div class="skills-groups">
+            <article class="skill-group"><h3>Languages</h3><div class="skill-chips"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>HTML/CSS</span></div></article>
+            <article class="skill-group"><h3>Backend</h3><div class="skill-chips"><span>Flask</span><span>FastAPI</span><span>Next.js</span></div></article>
+            <article class="skill-group"><h3>Frontend</h3><div class="skill-chips"><span>React</span><span>Vite</span><span>Tailwind CSS</span></div></article>
+            <article class="skill-group"><h3>Data and ML</h3><div class="skill-chips"><span>scikit-learn</span><span>XGBoost</span></div></article>
+            <article class="skill-group"><h3>Databases</h3><div class="skill-chips"><span>PostgreSQL</span><span>Supabase</span><span>SQLite</span></div></article>
+            <article class="skill-group"><h3>Delivery and testing</h3><div class="skill-chips"><span>Git/GitHub Actions</span><span>Docker</span><span>Render</span><span>Pytest</span><span>Vitest</span></div></article>
           </div>
-          <p class="tools-line"><strong>Tools:</strong> Python, Flask, FastAPI, TypeScript, Next.js, React, SQL, PostgreSQL/Supabase, Docker, Git.</p>
         </section>
 
         <section id="projects">
           <h2>Projects</h2>
           <p class="section-lead">A selection of client, university and personal work.</p>
+          <p class="ai-work-note">Built with AI coding assistants; I review, test and document everything.</p>
 
-          <article>
-            <h3>SecOps Phishing Scanner</h3>
-            <div class="project-details">
-              <p>Helps users check suspicious links before opening them. Built for a private client, it checks links with several machine-learning models and Google Safe Browsing.</p>
-              <p class="tech-line"><strong>Tech:</strong> Python, Flask, machine learning, Google Safe Browsing.</p>
-            </div>
-            <div class="project-meta">
-              <span class="project-status">Client project</span>
-              <a href="https://secops-phishing-scanner.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">Open Live Demo &rarr;</a>
-            </div>
-          </article>
-
-          <article>
-            <h3>TradeSense NG</h3>
-            <div class="project-details">
-              <p>Gives users investment suggestions based on historical data. Built for a private client, it includes secure logins, an admin log and a chart dashboard.</p>
-              <p class="tech-line"><strong>Tech:</strong> FastAPI, React, SQL, scikit-learn.</p>
-            </div>
-            <div class="project-meta">
-              <span class="project-status">Demo build, partly synthetic data</span>
-              <a href="https://github.com/bakareolamilekan365-tech/Retail_traders" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a>
-            </div>
-          </article>
-
-          <article>
-            <h3>Communication Analysis Tool</h3>
-            <div class="project-details">
-              <p>Helps users review emails, WhatsApp exports, SMS and typed messages for spam, sentiment, writing style and communication patterns.</p>
-              <p class="tech-line"><strong>Tech:</strong> Python.</p>
-              <p>This was a 2025 university group project. I wrote the code, and the group contributed the design theory.</p>
-            </div>
-            <div class="project-meta">
-              <span class="project-status">University group project · 2025</span>
-              <a href="https://github.com/bakareolamilekan365-tech/COMMUNICATION-ANALYSIS-TOOL-" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a>
-            </div>
-          </article>
-
-          <article class="minor-project">
-            <h3>Quest Lab</h3>
-            <div class="project-details">
-              <p>A small browser game where each choice affects energy, momentum and reputation.</p>
-              <p class="tech-line"><strong>Tech:</strong> HTML, CSS, JavaScript.</p>
-            </div>
-            <div class="project-meta">
-              <span class="project-status">Completed</span>
-              <div class="project-actions">
-                <a href="quest-lab/" class="btn btn-primary project-cta">Play Game</a>
-                <a href="https://github.com/bakareolamilekan365-tech/quest-lab" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-cta">View Repository</a>
+          <div class="projects-grid">
+            <article class="featured-project">
+              <h3>Atexgrove</h3>
+              <div class="project-details">
+                <p>A land-verification platform prototype for Abuja. Customers submit requests with documents, staff manage and assign cases, and customers see safe status updates.</p>
+                <p><strong>How it works</strong>Customers create verification cases and upload documents. Staff review and assign the cases, while customers receive controlled status updates.</p>
+                <p><strong>My role</strong>Co-founder and CTO, building the prototype with AI assistants under my review.</p>
+                <p><strong>Status</strong>Prototype on sample data; property search, maps and AI are planned, not built.</p>
+                <p class="tech-line"><strong>Tech:</strong> Next.js, TypeScript, Supabase.</p>
               </div>
-            </div>
-          </article>
+              <div class="project-meta"><a href="https://github.com/bakareolamilekan365-tech/ATEXGROVE" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a></div>
+            </article>
+
+            <article>
+              <h3>SecOps Phishing Scanner</h3>
+              <div class="project-details">
+                <p>Helps users check suspicious links before opening them. Built for a private client, it checks links with several machine-learning models and Google Safe Browsing.</p>
+                <p><strong>How it works</strong>Extracts features from a link, runs a three-model ensemble, and uses Google Safe Browsing as an extra check.</p>
+                <p><strong>My role</strong>Built end to end for a client.</p>
+                <p><strong>Status</strong>Deployed live on Render.</p>
+                <p class="tech-line"><strong>Tech:</strong> Python, Flask, machine learning, Google Safe Browsing.</p>
+              </div>
+              <div class="project-meta"><a href="https://secops-phishing-scanner.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">Open Live Demo &rarr;</a></div>
+            </article>
+
+            <article>
+              <h3>TradeSense NG</h3>
+              <div class="project-details">
+                <p>Gives users investment suggestions based on historical data. Built for a private client, it includes secure logins, an admin log and a chart dashboard.</p>
+                <p><strong>How it works</strong>Uses historical data and scikit-learn models, then presents the results in a React dashboard with candlestick charts.</p>
+                <p><strong>My role</strong>Built end to end for a client.</p>
+                <p><strong>Status</strong>Demo build, partly synthetic data.</p>
+                <p class="tech-line"><strong>Tech:</strong> FastAPI, React, SQL, scikit-learn.</p>
+              </div>
+              <div class="project-meta"><a href="https://github.com/bakareolamilekan365-tech/Retail_traders" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a></div>
+            </article>
+
+            <article>
+              <h3>Communication Analysis Tool</h3>
+              <div class="project-details">
+                <p>Helps users review emails, WhatsApp exports, SMS and typed messages for spam, sentiment, writing style and communication patterns.</p>
+                <p><strong>How it works</strong>Reads emails and WhatsApp exports, checks spam, sentiment, writing style and response patterns, then writes a report.</p>
+                <p><strong>My role</strong>I wrote the code, and the group contributed the design theory.</p>
+                <p><strong>Status</strong>University group project · 2025.</p>
+                <p class="tech-line"><strong>Tech:</strong> Python.</p>
+              </div>
+              <div class="project-meta"><a href="https://github.com/bakareolamilekan365-tech/COMMUNICATION-ANALYSIS-TOOL-" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a></div>
+            </article>
+
+            <article>
+              <h3>Quest Lab</h3>
+              <div class="project-details">
+                <p>A small browser game where each choice affects energy, momentum and reputation.</p>
+                <p><strong>How it works</strong>Players make choices that change their energy, momentum and reputation.</p>
+                <p><strong>My role</strong>[CONFIRM] Built the game and its interaction logic.</p>
+                <p><strong>Status</strong>Completed.</p>
+                <p class="tech-line"><strong>Tech:</strong> HTML, CSS, JavaScript.</p>
+              </div>
+              <div class="project-meta"><div class="project-actions"><a href="quest-lab/" class="btn btn-primary project-cta">Play Game</a><a href="https://github.com/bakareolamilekan365-tech/quest-lab" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-cta">View Repository</a></div></div>
+            </article>
+
+            <article>
+              <h3>This portfolio and links hub</h3>
+              <div class="project-details">
+                <p>A static portfolio page plus a React, Vite and Tailwind links page built from the LittleLink template.</p>
+                <p><strong>How it works</strong>The portfolio presents my work, while the links page groups my social and contact links.</p>
+                <p><strong>My role</strong>Built and maintain the portfolio and links hub.</p>
+                <p><strong>Status</strong>Live.</p>
+                <p class="tech-line"><strong>Tech:</strong> HTML, CSS, JavaScript, React, Vite, Tailwind CSS.</p>
+              </div>
+              <div class="project-meta"><div class="project-actions"><a href="socials/" class="btn btn-primary project-cta">Open Links Page</a><a href="https://github.com/bakareolamilekan365-tech/littlelink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-cta">View Repository</a></div></div>
+            </article>
+          </div>
         </section>
 
         <section id="research">
@@ -309,7 +359,7 @@
       });
       updateContactPreview();
 
-      const revealTargets = document.querySelectorAll("main section, #projects article, .skill-category, .experience-card, #research article");
+      const revealTargets = document.querySelectorAll("main section, #projects article, .skill-group, .experience-card, #research article");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       revealTargets.forEach((element) => element.classList.add("reveal"));
       if (reduceMotion) {
