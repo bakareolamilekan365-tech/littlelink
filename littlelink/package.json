@@ -1,7 +1,7 @@
 {
   "name": "littlelink",
   "version": "1.0.0",
-  "description": "A modern link aggregator page for Olamilekan Bakare",
+  "description": "A modern link aggregator page for Olamilekan Abdulkarim Bakare",
   "main": "index.html",
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
     "links",
     "portfolio"
   ],
-  "author": "Olamilekan Bakare",
+  "author": "Olamilekan Abdulkarim Bakare",
   "license": "MIT",
   "dependencies": {
     "react": "^19.2.5",

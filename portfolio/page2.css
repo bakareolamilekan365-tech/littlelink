@@ -571,7 +571,14 @@ header {
   font-size: 1.125rem;
   color: var(--accent);
   font-weight: 600;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
+}
+
+.hero-promise {
+  max-width: 42rem;
+  margin: 0;
+  color: color-mix(in oklab, var(--text) 90%, transparent);
+  font-size: 1.05rem;
 }
 
 .status-badge {
@@ -649,6 +656,53 @@ main > section:last-child {
   border-bottom: none;
 }
 
+/* ============================================================================
+   EXPERIENCE
+   ============================================================================ */
+
+.experience-list {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.experience-card,
+.research-grid article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.experience-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.experience-heading h3,
+.research-grid h3 {
+  color: var(--accent);
+}
+
+.experience-context,
+.experience-date {
+  color: color-mix(in oklab, var(--text) 72%, transparent);
+  font-size: 0.875rem;
+}
+
+.experience-date {
+  flex: 0 0 auto;
+  font-weight: 600;
+}
+
+.honest-status {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--spacing-md);
+  color: color-mix(in oklab, var(--text) 88%, transparent);
+}
+
 .section-lead {
   margin-top: calc(var(--spacing-md) * -0.25);
   margin-bottom: var(--spacing-lg);
@@ -682,6 +736,17 @@ main > section:last-child {
 .skill-category h3 {
   margin-bottom: var(--spacing-md);
   color: var(--accent);
+}
+
+.skill-category p {
+  margin: 0;
+  color: color-mix(in oklab, var(--text) 84%, transparent);
+}
+
+.tools-line {
+  margin: var(--spacing-lg) 0 0;
+  color: color-mix(in oklab, var(--text) 82%, transparent);
+  font-size: 0.9rem;
 }
 
 .skill-category ul {
@@ -890,6 +955,37 @@ main > section:last-child {
 .project-details p {
   margin-bottom: var(--spacing-md);
   color: color-mix(in oklab, var(--text) 90%, transparent);
+}
+
+.project-details .tech-line,
+.tech-line {
+  color: color-mix(in oklab, var(--text) 72%, transparent);
+  font-size: 0.85rem;
+}
+
+.project-details .tech-line strong,
+.tech-line strong {
+  display: inline;
+  margin: 0;
+}
+
+.minor-project {
+  max-width: 48rem;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.research-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.research-grid .project-meta {
+  margin-top: auto;
 }
 
 .project-meta {
@@ -1284,6 +1380,15 @@ footer p {
   }
 
   .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-heading {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .research-grid {
     grid-template-columns: 1fr;
   }
 

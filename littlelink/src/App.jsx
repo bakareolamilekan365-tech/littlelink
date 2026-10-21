@@ -418,7 +418,7 @@ export default function App() {
             <h1
               className={`mb-2 text-2xl text-zinc-900 dark:text-zinc-100 sm:text-3xl ${current.title}`}
             >
-              Olamilekan Bakare
+              Olamilekan Abdulkarim Bakare
             </h1>
             <p
               className={`text-sm text-zinc-600 dark:text-zinc-300 ${current.subtitle}`}
