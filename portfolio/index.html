@@ -25,7 +25,13 @@
         </button>
       </div>
 
-      <nav class="site-nav" aria-label="Primary section navigation">
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open section menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-navigation" class="site-nav" aria-label="Primary section navigation">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
@@ -342,23 +348,62 @@
       });
       updateContactPreview();
 
+      const navToggle = document.getElementById("nav-toggle");
+      const siteNav = document.getElementById("primary-navigation");
+
+      function setNavOpen(isOpen) {
+        navToggle?.setAttribute("aria-expanded", String(isOpen));
+        navToggle?.setAttribute("aria-label", isOpen ? "Close section menu" : "Open section menu");
+        siteNav?.classList.toggle("is-open", isOpen);
+      }
+
+      navToggle?.addEventListener("click", () => {
+        setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
+      });
+      siteNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setNavOpen(false)));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navToggle?.getAttribute("aria-expanded") === "true") {
+          setNavOpen(false);
+          navToggle.focus();
+        }
+      });
+      window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
+        if (event.matches) setNavOpen(false);
+      });
+
       const revealTargets = document.querySelectorAll("main section, #projects article, .skill-row, .experience-card, #research article");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       revealTargets.forEach((element) => element.classList.add("reveal"));
+
+      const revealAll = () => revealTargets.forEach((element) => element.classList.add("reveal-active"));
       if (reduceMotion) {
-        revealTargets.forEach((element) => element.classList.add("reveal-active"));
-      } else if (window.innerWidth <= 768 || !("IntersectionObserver" in window)) {
-        requestAnimationFrame(() => setTimeout(() => revealTargets.forEach((element) => element.classList.add("reveal-active")), 40));
+        revealAll();
+      } else if (!("IntersectionObserver" in window)) {
+        revealAll();
       } else {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("reveal-active");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.06, rootMargin: "0px 0px -10% 0px" });
-        revealTargets.forEach((element) => revealObserver.observe(element));
+        let revealObserver;
+        const revealFallback = window.setTimeout(() => {
+          revealAll();
+          revealObserver?.disconnect();
+        }, 1500);
+
+        try {
+          const isMobile = window.innerWidth <= 768;
+          revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal-active");
+                observer.unobserve(entry.target);
+              }
+            });
+          }, isMobile
+            ? { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+            : { threshold: 0.06, rootMargin: "0px 0px -10% 0px" });
+          revealTargets.forEach((element) => revealObserver.observe(element));
+        } catch {
+          window.clearTimeout(revealFallback);
+          revealAll();
+        }
       }
 
       document.getElementById("year").textContent = new Date().getFullYear();
