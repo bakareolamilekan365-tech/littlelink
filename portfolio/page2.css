@@ -23,6 +23,9 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
+  --page-padding: clamp(0.75rem, 3vw, 1.5rem);
+  --section-padding: clamp(2rem, 6vw, 3rem);
+  --card-padding: clamp(1rem, 4vw, 2rem);
 
   /* Border Radius */
   --radius-sm: 4px;
@@ -77,6 +80,13 @@ body[data-preset="signal-storyline"][data-mode="light"] {
   box-sizing: border-box;
 }
 
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -104,7 +114,7 @@ body {
     );
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: clamp(1rem, 0.98rem + 0.1vw, 1.0625rem);
   line-height: 1.6;
   transition:
     background 0.4s ease,
@@ -127,8 +137,9 @@ body::after {
 body::before {
   top: -120px;
   right: -120px;
-  width: 360px;
-  height: 360px;
+  width: min(75vw, 22.5rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   background: radial-gradient(
     circle,
     color-mix(in oklab, var(--accent) 30%, transparent) 0%,
@@ -139,8 +150,9 @@ body::before {
 body::after {
   bottom: -160px;
   left: -120px;
-  width: 460px;
-  height: 460px;
+  width: min(90vw, 28.75rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   background: radial-gradient(
     circle,
     color-mix(in oklab, var(--surface-strong) 78%, transparent) 0%,
@@ -199,7 +211,7 @@ body::after {
 }
 
 *::-webkit-scrollbar {
-  width: 10px;
+  width: clamp(0.5rem, 1vw, 0.625rem);
 }
 
 *::-webkit-scrollbar-track {
@@ -258,14 +270,14 @@ h3 {
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   font-weight: 600;
 }
 
 p {
   margin-top: 0;
   margin-bottom: var(--spacing-lg);
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.98rem + 0.1vw, 1.0625rem);
   line-height: 1.8;
 }
 
@@ -300,7 +312,7 @@ select:focus-visible {
 button,
 select {
   font-family: inherit;
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.98rem + 0.1vw, 1.0625rem);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -344,7 +356,7 @@ select {
 
 .btn-large {
   padding: var(--spacing-lg) var(--spacing-2xl);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
 /* ============================================================================
@@ -356,8 +368,9 @@ select {
   top: 24px;
   right: 24px;
   z-index: 1000;
-  width: 50px;
-  height: 50px;
+  width: clamp(2.75rem, 5vw, 3.125rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--surface-strong);
   border: 2px solid var(--border);
@@ -382,8 +395,9 @@ select {
 }
 
 .mode-icon {
-  width: 24px;
-  height: 24px;
+  width: clamp(1.25rem, 3vw, 1.5rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -416,9 +430,10 @@ select {
    ============================================================================ */
 
 .page-shell {
-  max-width: 900px;
+  width: min(100%, 56.25rem);
+  max-width: 100%;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: var(--page-padding);
   position: relative;
   z-index: 1;
 }
@@ -443,7 +458,7 @@ select {
 .preset-panel label {
   font-weight: 600;
   color: var(--text);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
 }
 
 .preset-panel button {
@@ -452,7 +467,7 @@ select {
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: var(--radius-md);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
   transition: all 0.3s ease;
 }
 
@@ -467,7 +482,7 @@ select {
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: var(--radius-md);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
   transition: all 0.3s ease;
 }
 
@@ -492,7 +507,7 @@ header {
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
-  padding: var(--spacing-sm) calc(var(--spacing-md) + 64px) var(--spacing-sm)
+  padding: var(--spacing-sm) calc(var(--spacing-md) + clamp(2.75rem, 7vw, 4rem)) var(--spacing-sm)
     var(--spacing-md);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
@@ -526,7 +541,7 @@ header {
 
 .hero {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(0, clamp(9.375rem, 22vw, 12.5rem)) minmax(0, 1fr);
   gap: var(--spacing-2xl);
   align-items: center;
   margin-bottom: var(--spacing-3xl);
@@ -538,8 +553,10 @@ header {
 }
 
 .hero img {
-  width: 200px;
-  height: 200px;
+  width: clamp(9.375rem, 22vw, 12.5rem);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: var(--radius-lg);
   border: 2px solid var(--border);
   object-fit: cover;
@@ -568,17 +585,18 @@ header {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 0;
 }
 
 .hero-promise {
-  max-width: 42rem;
+  width: min(100%, 42rem);
+  max-width: 100%;
   margin: 0;
   color: color-mix(in oklab, var(--text) 90%, transparent);
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 0.98rem + 0.2vw, 1.05rem);
 }
 
 .status-badge {
@@ -590,14 +608,15 @@ header {
   border: 1px solid color-mix(in oklab, var(--accent) 25%, transparent);
   background: color-mix(in oklab, var(--accent) 12%, transparent);
   color: var(--accent);
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
   letter-spacing: 0.2px;
   font-weight: 600;
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: clamp(0.5rem, 1vw, 0.625rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: #22c55e;
   position: relative;
@@ -626,7 +645,7 @@ header {
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--surface) 85%, transparent);
   color: color-mix(in oklab, var(--text) 88%, transparent);
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
   font-weight: 600;
 }
 
@@ -646,9 +665,20 @@ main {
   gap: var(--spacing-3xl);
 }
 
+main > section,
+article,
+.experience-card,
+.skill-row,
+.project-meta,
+.contact-card {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 main > section {
   scroll-margin-top: 120px;
-  padding-bottom: var(--spacing-2xl);
+  padding-bottom: var(--section-padding);
   border-bottom: 1px solid var(--border);
 }
 
@@ -670,7 +700,7 @@ main > section:last-child {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  padding: var(--card-padding);
 }
 
 .experience-heading {
@@ -689,7 +719,7 @@ main > section:last-child {
 .experience-context,
 .experience-date {
   color: color-mix(in oklab, var(--text) 72%, transparent);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
 }
 
 .experience-date {
@@ -707,7 +737,7 @@ main > section:last-child {
   margin-top: calc(var(--spacing-md) * -0.25);
   margin-bottom: var(--spacing-lg);
   color: color-mix(in oklab, var(--text) 82%, transparent);
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.98rem + 0.1vw, 1.0625rem);
 }
 
 /* ============================================================================
@@ -721,11 +751,11 @@ main > section:last-child {
 
 .skill-row {
   display: grid;
-  grid-template-columns: minmax(180px, 0.35fr) 1fr;
+  grid-template-columns: minmax(0, 0.35fr) minmax(0, 1fr);
   gap: var(--spacing-xl);
-  padding: var(--spacing-lg) 0;
+  padding: clamp(1rem, 3vw, 1.5rem) 0;
   border-bottom: 1px solid var(--border);
-  font-size: 1.0625rem;
+  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   line-height: 1.7;
 }
 
@@ -770,7 +800,7 @@ main > section:last-child {
 }
 
 .accordion-meta {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
   color: color-mix(in oklab, var(--text) 70%, transparent);
   font-weight: 500;
 }
@@ -813,7 +843,7 @@ main > section:last-child {
 .term-rotation-note {
   margin-top: var(--spacing-md);
   margin-bottom: 0;
-  font-size: 0.78rem;
+  font-size: clamp(0.78rem, 0.75rem + 0.12vw, 0.84rem);
   color: color-mix(in oklab, var(--text) 68%, transparent);
 }
 
@@ -836,6 +866,7 @@ main > section:last-child {
 
 .snippet-image {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: var(--radius-md);
@@ -853,12 +884,14 @@ main > section:last-child {
     var(--surface)
   );
   border: 1px solid var(--border);
-  padding: var(--spacing-xl);
+  padding: var(--card-padding);
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-lg);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 #projects article::before {
@@ -896,7 +929,7 @@ main > section:last-child {
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--surface-strong) 80%, transparent);
   color: color-mix(in oklab, var(--text) 84%, transparent);
-  font-size: 0.72rem;
+  font-size: clamp(0.72rem, 0.69rem + 0.12vw, 0.78rem);
   letter-spacing: 0.2px;
   font-weight: 600;
 }
@@ -923,7 +956,7 @@ main > section:last-child {
 .project-details .tech-line,
 .tech-line {
   color: color-mix(in oklab, var(--text) 72%, transparent);
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.12vw, 0.9125rem);
 }
 
 .project-details .tech-line strong,
@@ -934,7 +967,7 @@ main > section:last-child {
 
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -964,11 +997,12 @@ main > section:last-child {
 }
 
 .project-cta {
-  min-width: 182px;
+  flex: 1 1 auto;
+  max-width: 100%;
 }
 
 .project-status {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
   font-weight: 600;
   padding: var(--spacing-xs) var(--spacing-md);
   background: color-mix(in oklab, var(--accent) 20%, var(--bg));
@@ -976,10 +1010,12 @@ main > section:last-child {
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .project-timeline {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
   color: color-mix(in oklab, var(--text) 70%, transparent);
   font-weight: 500;
 }
@@ -1046,7 +1082,7 @@ main > section:last-child {
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -1054,7 +1090,7 @@ main > section:last-child {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  padding: clamp(1rem, 3vw, 1.5rem);
   transition: all 0.3s ease;
 }
 
@@ -1087,7 +1123,7 @@ main > section:last-child {
 
 .contact-section {
   text-align: center;
-  padding: var(--spacing-2xl) 0;
+  padding: var(--section-padding) 0;
 }
 
 .contact-section h2 {
@@ -1095,7 +1131,7 @@ main > section:last-child {
 }
 
 .contact-section p {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   margin-bottom: var(--spacing-2xl);
   color: color-mix(in oklab, var(--text) 90%, transparent);
 }
@@ -1109,7 +1145,7 @@ main > section:last-child {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
   gap: var(--spacing-lg);
   text-align: left;
 }
@@ -1118,7 +1154,7 @@ main > section:last-child {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  padding: var(--card-padding);
 }
 
 .contact-experience {
@@ -1131,7 +1167,7 @@ main > section:last-child {
 }
 
 .contact-card-text {
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 0.92rem + 0.12vw, 1rem);
   margin-bottom: var(--spacing-lg);
   color: color-mix(in oklab, var(--text) 86%, transparent);
 }
@@ -1143,7 +1179,7 @@ main > section:last-child {
 }
 
 .contact-form label {
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.82rem + 0.12vw, 0.9125rem);
   font-weight: 600;
   color: color-mix(in oklab, var(--text) 84%, transparent);
 }
@@ -1176,7 +1212,7 @@ main > section:last-child {
 
 .tips-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--spacing-sm);
   margin-top: var(--spacing-lg);
 }
@@ -1194,7 +1230,7 @@ main > section:last-child {
 }
 
 .tip-card p {
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 0.87rem + 0.12vw, 0.9625rem);
   margin: 0;
   line-height: 1.55;
 }
@@ -1228,8 +1264,9 @@ main > section:last-child {
 }
 
 .social-orb {
-  width: 42px;
-  height: 42px;
+  width: clamp(2.75rem, 5vw, 3rem);
+  max-width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--surface-strong) 70%, transparent);
@@ -1246,8 +1283,10 @@ main > section:last-child {
 }
 
 .social-orbit .social-favicon {
-  width: 19px;
-  height: 19px;
+  width: clamp(1.125rem, 2.5vw, 1.25rem);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 5px;
 }
 
@@ -1255,7 +1294,7 @@ main > section:last-child {
   margin-top: var(--spacing-sm);
   margin-bottom: 0;
   text-align: center;
-  font-size: 0.82rem;
+  font-size: clamp(0.82rem, 0.79rem + 0.12vw, 0.88rem);
   color: color-mix(in oklab, var(--text) 70%, transparent);
 }
 
@@ -1270,9 +1309,9 @@ main > section:last-child {
 
 footer {
   text-align: center;
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  padding: var(--section-padding) 0 clamp(1rem, 3vw, 1.5rem);
   border-top: 1px solid var(--border);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
   color: color-mix(in oklab, var(--text) 70%, transparent);
 }
 
@@ -1285,12 +1324,8 @@ footer p {
    ============================================================================ */
 
 @media (max-width: 768px) {
-  .page-shell {
-    padding: var(--spacing-md);
-  }
-
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-lg);
     text-align: center;
   }
@@ -1312,9 +1347,11 @@ footer p {
     margin-bottom: var(--spacing-lg);
     border-radius: var(--radius-lg);
     padding: var(--spacing-sm);
+    top: clamp(0.5rem, 2vw, 0.875rem);
     justify-content: flex-start;
     overflow-x: auto;
     flex-wrap: nowrap;
+    max-width: 100%;
     scrollbar-width: none;
   }
 
@@ -1324,7 +1361,9 @@ footer p {
 
   .site-nav a {
     flex: 0 0 auto;
-    min-height: 32px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .top-controls {
@@ -1339,7 +1378,7 @@ footer p {
   }
 
   .skill-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-xs);
   }
 
@@ -1349,11 +1388,11 @@ footer p {
   }
 
   .research-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .snippet-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .learning-lead {
@@ -1362,19 +1401,11 @@ footer p {
   }
 
   .certificates-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card {
-    padding: var(--spacing-lg);
-  }
-
-  #projects article {
-    padding: var(--spacing-lg);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .project-meta {
@@ -1408,124 +1439,27 @@ footer p {
     min-height: 44px;
   }
 
-  .social-orb {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 16px;
-  }
-
   .message-preview {
     min-height: 160px;
   }
-}
-
-@media (max-width: 480px) {
-  .page-shell {
-    padding: var(--spacing-sm);
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.375rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  .hero img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .site-nav {
-    gap: var(--spacing-sm);
-    font-size: 0.875rem;
-    top: 8px;
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
-  .learning-accordion summary {
-    padding: var(--spacing-sm);
-  }
-
-  .btn {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.875rem;
-  }
-
-  .btn-large {
-    padding: var(--spacing-md) var(--spacing-lg);
-  }
 
   #mode-toggle {
-    width: 44px;
-    height: 44px;
-    bottom: 14px;
     top: auto;
-    right: 14px;
+    right: clamp(0.75rem, 3vw, 1.125rem);
+    bottom: clamp(0.75rem, 3vw, 1.125rem);
   }
+}
 
-  .mode-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .preset-panel label {
-    display: none;
-  }
-
-  .preset-panel {
-    width: 100%;
-    justify-content: center;
-    gap: var(--spacing-xs);
-  }
-
-  .preset-panel button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.75rem;
-  }
-
-  #preset-select {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.75rem;
-  }
-
-  .project-status {
-    font-size: 0.65rem;
-  }
-
-  .status-badge {
-    font-size: 0.68rem;
-    padding: 3px 8px;
-  }
-
-  .hero-metrics span {
-    font-size: 0.68rem;
-  }
-
-  .learning-lead {
-    font-size: 0.92rem;
-  }
-
-  .social-orbit {
-    gap: var(--spacing-sm);
-  }
-
-  .social-orb {
-    width: 38px;
-    height: 38px;
-  }
-
-  .social-orbit-caption {
-    font-size: 0.76rem;
+@media (hover: none), (pointer: coarse) {
+  .btn,
+  .site-nav a,
+  .project-link,
+  .certificate-link,
+  .social-orb,
+  #mode-toggle,
+  button,
+  select {
+    min-height: 44px;
   }
 }
 
@@ -1535,7 +1469,7 @@ footer p {
 
 .sr-only {
   position: absolute;
-  width: 1px;
+  width: min(1px, 0.0625rem);
   height: 1px;
   padding: 0;
   margin: -1px;
@@ -1568,19 +1502,6 @@ footer p {
 
   .btn {
     border: 1px solid black;
-  }
-}
-
-@media (max-width: 900px) {
-  .site-nav {
-    top: 10px;
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-
-  #mode-toggle {
-    bottom: 18px;
-    top: auto;
-    right: 14px;
   }
 }
 
