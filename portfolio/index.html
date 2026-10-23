@@ -42,7 +42,7 @@
           </figure>
           <div class="hero-content">
             <h1>Olamilekan Abdulkarim Bakare</h1>
-            <p class="hero-roles">Software Developer | Co-founder &amp; CTO, Atexgrove</p>
+            <p class="hero-roles">Full-Stack Developer | Co-founder &amp; CTO, Atexgrove</p>
             <p class="hero-promise">I build secure web tools and dashboards that automate everyday business work.</p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -78,29 +78,62 @@
 
             <article class="experience-card">
               <div class="experience-heading">
-                <h3>Freelance Software Developer</h3>
+                <div>
+                  <h3>Freelance Software Developer</h3>
+                  <p class="experience-context">Self-employed</p>
+                </div>
                 <p class="experience-date">Mar to Jul 2026</p>
               </div>
-              <p>Built a phishing-link scanner and an investment-recommendation web app for private clients.</p>
+              <div>
+                <h4>Phishing-link scanner (private client)</h4>
+                <ul>
+                  <li>Flask web app that extracts features from a URL and classifies it with an ensemble of three models (Random Forest, XGBoost, Logistic Regression).</li>
+                  <li>Blocks requests aimed at internal or private addresses, and adds a Google Safe Browsing check as an extra signal.</li>
+                  <li>Deployed live on Render.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Investment-recommendation web app, TradeSense NG (private client)</h4>
+                <ul>
+                  <li>FastAPI backend with secure logins (JWT, bcrypt) and an admin activity log.</li>
+                  <li>React dashboard with candlestick charts, and scikit-learn models working on historical data.</li>
+                  <li>Tested (pytest and vitest) and packaged with Docker for Render.</li>
+                  <li>Demo build with partly synthetic data.</li>
+                </ul>
+              </div>
             </article>
           </div>
         </section>
 
         <section id="skills">
-          <h2>What I Can Help With</h2>
-          <div class="skills-grid">
-            <div class="skill-category"><h3>Building web apps</h3><p>Turn a workflow or idea into a usable web product.</p></div>
-            <div class="skill-category"><h3>Data and machine-learning tools</h3><p>Use data and models to support useful decisions.</p></div>
-            <div class="skill-category"><h3>Secure login and access control</h3><p>Protect accounts, pages and data by user role.</p></div>
-            <div class="skill-category"><h3>Dashboards and reporting</h3><p>Make important information easier to see and act on.</p></div>
-            <div class="skill-category"><h3>Testing and documentation</h3><p>Check the work and explain how it runs.</p></div>
-          </div>
-          <p class="tools-line"><strong>Tools:</strong> Python, Flask, FastAPI, TypeScript, Next.js, React, SQL, PostgreSQL/Supabase, Docker, Git.</p>
+          <h2>Skills &amp; Tools</h2>
+          <dl class="skills-list">
+            <div class="skill-row"><dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, HTML/CSS</dd></div>
+            <div class="skill-row"><dt>Backend</dt><dd>Flask, FastAPI, Next.js</dd></div>
+            <div class="skill-row"><dt>Frontend</dt><dd>React, Vite, Tailwind CSS</dd></div>
+            <div class="skill-row"><dt>Data and ML</dt><dd>scikit-learn, XGBoost</dd></div>
+            <div class="skill-row"><dt>Databases</dt><dd>PostgreSQL, Supabase, SQLite</dd></div>
+            <div class="skill-row"><dt>Delivery and testing</dt><dd>Git/GitHub Actions, Docker, Render, Pytest, Vitest</dd></div>
+          </dl>
         </section>
 
         <section id="projects">
           <h2>Projects</h2>
           <p class="section-lead">A selection of client, university and personal work.</p>
+
+          <article>
+            <h3>Atexgrove</h3>
+            <div class="project-details">
+              <p>A land-verification platform prototype for Abuja. Customers submit requests with documents, staff manage and assign cases, and customers see safe status updates.</p>
+              <p><strong>How it works</strong>Customers create verification cases and upload documents. Staff review and assign the cases, while customers receive controlled status updates.</p>
+              <p><strong>My role</strong>Co-founder and CTO, building the prototype with AI assistants under my review.</p>
+              <p class="tech-line"><strong>Tech:</strong> Next.js, TypeScript, Supabase.</p>
+            </div>
+            <div class="project-meta">
+              <span class="project-status">Prototype on sample data; property search, maps and AI are planned, not built</span>
+              <a href="https://github.com/bakareolamilekan365-tech/ATEXGROVE" target="_blank" rel="noopener noreferrer" class="project-link">View Repository &rarr;</a>
+            </div>
+          </article>
 
           <article>
             <h3>SecOps Phishing Scanner</h3>
@@ -139,7 +172,7 @@
             </div>
           </article>
 
-          <article class="minor-project">
+          <article>
             <h3>Quest Lab</h3>
             <div class="project-details">
               <p>A small browser game where each choice affects energy, momentum and reputation.</p>
@@ -309,7 +342,7 @@
       });
       updateContactPreview();
 
-      const revealTargets = document.querySelectorAll("main section, #projects article, .skill-category, .experience-card, #research article");
+      const revealTargets = document.querySelectorAll("main section, #projects article, .skill-row, .experience-card, #research article");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       revealTargets.forEach((element) => element.classList.add("reveal"));
       if (reduceMotion) {

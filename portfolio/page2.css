@@ -714,66 +714,29 @@ main > section:last-child {
    SKILLS SECTION
    ============================================================================ */
 
-.skills-grid {
+.skills-list {
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.skill-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.skill-category {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
-}
-
-.skill-category:hover {
-  border-color: var(--accent);
-  box-shadow: 0 8px 24px color-mix(in oklab, var(--accent) 20%, transparent);
-}
-
-.skill-category h3 {
-  margin-bottom: var(--spacing-md);
-  color: var(--accent);
-}
-
-.skill-category p {
-  margin: 0;
-  color: color-mix(in oklab, var(--text) 84%, transparent);
-}
-
-.tools-line {
-  margin: var(--spacing-lg) 0 0;
-  color: color-mix(in oklab, var(--text) 82%, transparent);
-  font-size: 0.9rem;
-}
-
-.skill-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skill-category li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-sm) 0;
+  grid-template-columns: minmax(180px, 0.35fr) 1fr;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
   border-bottom: 1px solid var(--border);
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
-.skill-category li:last-child {
-  border-bottom: none;
-}
-
-.skill-level {
-  font-size: 0.75rem;
-  background: color-mix(in oklab, var(--accent) 20%, var(--bg));
+.skill-row dt {
+  font-weight: 700;
   color: var(--accent);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-full);
-  font-weight: 600;
+}
+
+.skill-row dd {
+  margin: 0;
+  color: color-mix(in oklab, var(--text) 90%, transparent);
 }
 
 .learning-essentials {
@@ -967,10 +930,6 @@ main > section:last-child {
 .tech-line strong {
   display: inline;
   margin: 0;
-}
-
-.minor-project {
-  max-width: 48rem;
 }
 
 .research-grid {
@@ -1379,8 +1338,9 @@ footer p {
     justify-content: center;
   }
 
-  .skills-grid {
+  .skill-row {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
   }
 
   .experience-heading {
@@ -1539,10 +1499,6 @@ footer p {
   }
 
   .project-status {
-    font-size: 0.65rem;
-  }
-
-  .skill-level {
     font-size: 0.65rem;
   }
 
