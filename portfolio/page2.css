@@ -23,7 +23,7 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
-  --page-padding: clamp(0.75rem, 3vw, 1.5rem);
+  --page-padding: clamp(1rem, 3vw, 1.5rem);
   --section-padding: clamp(2rem, 6vw, 3rem);
   --card-padding: clamp(1rem, 4vw, 2rem);
 
@@ -120,7 +120,6 @@ body {
     background 0.4s ease,
     color 0.4s ease;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
 }
 
 body::before,
@@ -136,7 +135,7 @@ body::after {
 
 body::before {
   top: -120px;
-  right: -120px;
+  right: 0;
   width: min(75vw, 22.5rem);
   max-width: 100%;
   aspect-ratio: 1;
@@ -149,7 +148,7 @@ body::before {
 
 body::after {
   bottom: -160px;
-  left: -120px;
+  left: 0;
   width: min(90vw, 28.75rem);
   max-width: 100%;
   aspect-ratio: 1;
@@ -500,6 +499,10 @@ header {
   margin-bottom: var(--spacing-3xl);
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .site-nav {
   position: sticky;
   top: 14px;
@@ -767,6 +770,10 @@ main > section:last-child {
 .skill-row dd {
   margin: 0;
   color: color-mix(in oklab, var(--text) 90%, transparent);
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .learning-essentials {
@@ -1342,28 +1349,77 @@ footer p {
     justify-content: center;
   }
 
+  .nav-toggle {
+    position: sticky;
+    top: clamp(0.5rem, 2vw, 0.875rem);
+    z-index: var(--z-fixed);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    width: clamp(2.75rem, 12vw, 3rem);
+    max-width: 100%;
+    aspect-ratio: 1;
+    margin: 0 0 var(--spacing-sm) auto;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: color-mix(in oklab, var(--surface) 92%, transparent);
+    color: var(--accent);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-toggle span {
+    width: min(100%, 1.25rem);
+    height: 2px;
+    border-radius: var(--radius-full);
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(0.475rem) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-0.475rem) rotate(-45deg);
+  }
+
   .site-nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
     border-radius: var(--radius-lg);
     padding: var(--spacing-sm);
-    top: clamp(0.5rem, 2vw, 0.875rem);
-    justify-content: flex-start;
-    overflow-x: auto;
+    top: calc(clamp(0.5rem, 2vw, 0.875rem) + 3.5rem);
+    justify-content: center;
+    overflow: visible;
     flex-wrap: nowrap;
+    width: 100%;
     max-width: 100%;
-    scrollbar-width: none;
   }
 
-  .site-nav::-webkit-scrollbar {
-    display: none;
+  .site-nav.is-open {
+    display: flex;
   }
 
   .site-nav a {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .top-controls {
@@ -1380,6 +1436,8 @@ footer p {
   .skill-row {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-xs);
+    width: 100%;
+    max-width: 100%;
   }
 
   .experience-heading {
@@ -1448,6 +1506,13 @@ footer p {
     right: clamp(0.75rem, 3vw, 1.125rem);
     bottom: clamp(0.75rem, 3vw, 1.125rem);
   }
+
+  .reveal {
+    transform: translateY(12px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  }
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -1456,6 +1521,7 @@ footer p {
   .project-link,
   .certificate-link,
   .social-orb,
+  .nav-toggle,
   #mode-toggle,
   button,
   select {
